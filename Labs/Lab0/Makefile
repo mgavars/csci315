@@ -1,3 +1,8 @@
+# Mitch Gavars
+# Prof. Marchiori
+# CSCI 315 Lab 0
+# 8/27/19
+
 CC = gcc
 CFLAGS = -std=gnu99 -Wall -g #-DDEBUG
 
