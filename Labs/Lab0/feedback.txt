@@ -1,0 +1,31 @@
+Comments:
+Make clean worked.
+Make worked.
+dlisttest ran but output was not correct: 41a42,45
+> 	string = ignorant
+> 	string = hospital
+> 	string = gunk
+> 	string = folly
+47,48d50
+< string = @T�bIV
+< string = folly
+54a57,59
+> 	string = ignorant
+> 	string = hospital
+> 	string = gunk
+59,60d63
+< string = @T�bIV
+< string = �S�bIV
+63c66
+< removed string = (null)
+---
+> removed string = hospital
+65a69,70
+> 	string = ignorant
+> 	string = gunk
+68d72
+< string = hospital
+70,71d73
+< string = @T�bIV
+< string = �S�bIV
+Score: 55/70
