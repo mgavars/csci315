@@ -1,0 +1,7 @@
+Mitch Gavars
+CSCI315 Lab1 - answers.txt
+Alan Marchiori 
+9/3/19
+
+Problem 1:
+When fork() is called, it creates a duplicate of the current (parent) process. This duplicates everything in the current process, so in this case a second instance of num is created for the child process.
