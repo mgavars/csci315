@@ -33,6 +33,7 @@ int main(int argc, char *argv[]) {
   } else if (pid == 0) {
     printf("child pid: %d\n", pid);
     printf("child getpid: %d\n", getpid());
+    printf("child getppid: %d\n", getppid());
     for (num=0; num < 20; num++) {
       printf("child: %d\n", num); fflush(stdout);
       // printf("pid : %d\n", 3);
