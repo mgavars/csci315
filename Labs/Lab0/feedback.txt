@@ -7,15 +7,15 @@ dlisttest ran but output was not correct: 41a42,45
 > 	string = gunk
 > 	string = folly
 47,48d50
-< string = @$��V
+< string = @d�,3V
 < string = folly
 54a57,59
 > 	string = ignorant
 > 	string = hospital
 > 	string = gunk
 59,60d63
-< string = @$��V
-< string = �#��V
+< string = @d�,3V
+< string = �c�,3V
 63c66
 < removed string = (null)
 ---
@@ -26,6 +26,6 @@ dlisttest ran but output was not correct: 41a42,45
 68d72
 < string = hospital
 70,71d73
-< string = @$��V
-< string = �#��V
+< string = @d�,3V
+< string = �c�,3V
 Score: 55/70
