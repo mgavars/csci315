@@ -5,3 +5,17 @@ Alan Marchiori
 
 Problem 1:
 When fork() is called, it creates a duplicate of the current (parent) process. This duplicates everything in the current process, so in this case a second instance of num is created for the child process.
+
+Problem 2:
+a.	i and x are located in data because they are globally initialized and  pid,j,y are located in the stack
+
+
+b.	1. The data and stack segments of the parent process are copied
+ over to the the child - we can see this because the child's values of x and y are the same as the parent from when it was created.
+
+      	2. The changes made by the child are not seen by the parent. The two shared memory when copied over, until changes were made. Then the child stores those in its own memory - this is copy-on-write. The two memory spaces will no longer interact after creation.
+
+
+d. 	1. If one process closes a file, then the other can still read from it. The child process closed the file but the parents was still able to read from it.
+
+	2. The child that is reading from an inherited file will affect the parent's reading from that file. The child reads five bytes and then the parent reads five bytes - the five bytes read by the parent are the five bytes that come after the childs five bytes. This means the child incremented the file descriptor, which, in turn, changed what the parent read. 
