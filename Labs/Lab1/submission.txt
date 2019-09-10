@@ -1,0 +1,13 @@
+Mitch Gavars
+Professor Marchiori
+CSCI 315 Lab 1 - submission.txt
+9/09/19
+
+Problem 1: fork-wait.c works as it should
+
+Problem 2: fork-file.c works as it should
+
+Problem 3: I believe I implemented catcount.c to work correctly. I was not sure if execlp should be printing anything when I ran it, but I used a bunch of printf statements to make sure everything was executing, which it was. And then I believe I implemented print_environment to work correctly.
+
+
+Everything has been included in the Makefile for this lab.

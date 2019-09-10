@@ -17,3 +17,15 @@ myprog: myprog.c
 
 fork: fork.c
 	$(CC) $(CFLAGS) fork.c -o fork
+
+fork-wait: fork-wait.c
+	$(CC) $(CFLAGS) fork-wait.c -o fork-wait
+
+fork-data: fork-data.c
+	$(CC) $(CFLAGS) fork-data.c -o fork-data
+
+fork-file: fork-file.c
+	$(CC) $(CFLAGS) fork-file.c -o fork-file
+
+catcount: catcount.c
+	$(CC) $(CFLAGS) catcount.c -o catcount
