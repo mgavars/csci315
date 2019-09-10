@@ -38,6 +38,15 @@
 int i = 7;
 double x = 3.14;
 
+pid_t Fork() {
+  int pid = fork();
+  if (pid == -1) {
+    perror("Error creating child process");
+    exit(-1);
+  }
+  return pid;
+}
+
 int main(int argc, char* argv[]) {
 
   int pid;
@@ -89,7 +98,7 @@ int main(int argc, char* argv[]) {
 
     // read 5 characters from file into buf_parent
     // print the characters in buf_child to terminal
-    read(filedesc,buf_parent,5)
+    read(filedesc,buf_parent,5);
     printf("buf_parent part 1: %s\n", buf_parent);
 
     printf("pid= %d -- parent waits for child to terminate\n", pid);
