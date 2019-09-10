@@ -10,4 +10,4 @@ heap-test: heap-test.c
 	$(CC) $(CFLAGS) heap-test.c -o heap-test
 
 pipe-test: pipe-test.c
-	$(CC) $(CFLAGS) pipe-test.c -o pipe-test
+	$(CC) $(CFLAGS) pipe-test.c -o pipe-test 

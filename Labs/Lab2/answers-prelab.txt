@@ -1,0 +1,12 @@
+Mitch Gavars
+Professor Marchiori
+CSCI 315 Prelab2 answers-prelab.txt
+9/09/19
+
+1. When a child process is created in linux, it copies all of the information from the parent. If a parent changes something in it's memory, the child will not change after it had already been created. The child originally has all of the same information in memory including in the heap until the parent changes something. After this occure, the two have different values in their heaps.
+
+
+2. The parent process created a pipe and then sends a fork() call creating the child process. What occurs after the fork() call depends on how the data flows through the pipe. In this instance, the parent writes to the pipe and the child reads from it. The parent process will close the read end of its part of the pipe whereas the child will close the write end of its part of the pipe. The parent is able to create a pipe to communicate with its child. 
+
+
+3. Linux files and pipes are each ways of communication. A file can contain a list of instructions stored on a disk whereas a pipe allows one to tranfer information directly to another. Files and pipes are both unidirectional. Pipes are half-duplex because each side cannot be sending messages to each other at the same time. Due to this, a pipe is also asynchronous - it must wait for one side of the pipe to respond before it can answer. However, files are synchronous - they do not need to wait for the responses of users to continue sending information. A file cannot be accessed by several people wherad the pipes are available to the people that are granted access. For a pipe, a user may call the command pipe() to create a link of transportation for information between two processes. 
