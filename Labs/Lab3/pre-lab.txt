@@ -1,0 +1,14 @@
+Mitch Gavars
+Professor Marchiori
+CSCI 315 Prelab 3 - pre-lab.txt
+9/16/2019
+
+1. Do the threads’ order of execution match the order in which they were created?
+
+Yes, the threads order of execution match the order in which the function pthread_join was called because the man page for this function says that it waits for the input pthread to be terminated. So since I called the pthread_join's in order of number, character, letter, that is the order they will execute.  
+
+
+2. Looking at the characters that are printed to the standard output, do the threads always follow the same order of execution? That is, we want to know whether if you always see thread 1, then thread 2, then thread 3, etc., repeating in a predictable order.
+
+
+I always see thread 1 then thread 2 then thread 3 being printed. They follow the same order of execution and repeat in a predictable order. As stated before, thread 1 (some numbers) prints first, thread 2 (some letters) prints second, and thread 3 (the pound symbols) prints third. This is the order in which I created them. I did not add pthread_cond_wait or pthread_cond_signal to switch back and forth between the threads, so it does not switch consitently between the threads. 
