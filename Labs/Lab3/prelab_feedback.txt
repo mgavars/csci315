@@ -1,0 +1,5 @@
+Comments:
+warnings when compling char-threads
+The order of execution is not predictable.
+mytime does not compile.
+Score: 30/30
