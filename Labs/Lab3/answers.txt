@@ -1,0 +1,16 @@
+Mitch Gavars
+Alan Marchiori
+CSCI 315 Lab3 - answers.txt
+09/17/19
+
+1.
+	"undefined reference to 'pow'"
+	"undefined referece to 'pthread_create'"
+	"undefined reference to 'pthread_join'"
+
+2.
+	The linker flag we used is '-lm' which links the math library.
+
+
+3.
+	I am not getting any undefined references, just an unused variable reference to the variable 'status'.
