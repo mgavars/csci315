@@ -3,6 +3,8 @@ Alan Marchiori
 CSCI 315 Lab3 - answers.txt
 09/17/19
 
+Problem 1
+
 1.
 	"undefined reference to 'pow'"
 	"undefined referece to 'pthread_create'"
@@ -13,4 +15,20 @@ CSCI 315 Lab3 - answers.txt
 
 
 3.
-	I am not getting any undefined references, just an unused variable reference to the variable 'status'.
+	Still getting undefined references to:
+	      'pthread_create'
+	      'pthread_join'
+
+Problem 2
+
+1. The main thread passes it arguments to the other threads by putting its aguments into a struct thread_args.
+
+2. In this circumstance, calloc(3) is preferable to malloc(3) because we do not know the input size, and this lets us initialize however many struct thread_args we want based on the input.
+
+3. If a thread is detached, then its ID and other resources can be used once it is complete. Essentially, the thread forgets everything it did. This program should not create detached threads because we want to take the sum from each thread once they are all complete and get a net summation - so we need to access the resources of each thread once they are complete.
+
+4. The main thread receives the results from each computation once all the threads are complete. The results are able to be accessed because we did not detach all of the threads. The main thread runs through the array of threads created and accesses each of its results through the struct -> call.
+
+5. If one of the child threads is exited halfway through its computation, then the thread will not show up as 'done' in the terminal and the final computations will not be completed because it will be missing one of the child thread's computations. It does not even begin to join the previous threads before the one that exited.
+
+6. If one of the child processes calls execl on "/bin/ls" in its computation, then the thread once again does not complete. The thread will start, then make an exec call and not finish its process. The only difference between the results of this and exit(3) is that when execl(3)is called during a child thread, once all threads are completed, the child threads up to the one that called it join.
