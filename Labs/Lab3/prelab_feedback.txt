@@ -1,5 +1,5 @@
 Comments:
-warnings when compling char-threads
-The order of execution is not predictable.
-mytime does not compile.
-Score: 30/30
+warnings when compiling char-threads, but it worked.
+The order is not always the same!
+Errors compiling mytime.c
+Score: 14/30
