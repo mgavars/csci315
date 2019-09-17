@@ -1,0 +1,15 @@
+Mitch Gavars
+Professor Marchiori
+CSCI 315 Lab2 - submission.txt
+9/16/19
+
+Problem 1:
+Works correctly as specified.
+
+Problem 2: 
+Works correctly as specified.
+
+Problem 3:
+Had absolutely 0 idea of what to do. Still will try to figure it out later.
+
+I had thought the wrapper files were messing with my program in the first two problems so I commented them out but left the work of them in.

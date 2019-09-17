@@ -11,3 +11,12 @@ heap-test: heap-test.c
 
 pipe-test: pipe-test.c
 	$(CC) $(CFLAGS) pipe-test.c -o pipe-test 
+
+pipes: pipes.c
+	$(CC) $(CFLAGS) pipes.c -o pipes
+
+upper: upper.c
+	$(CC) $(CFLAGS) upper.c -o upper
+
+tokens: tokens.c
+	$(CC) $(CFLAGS) tokens.c -o tokens
