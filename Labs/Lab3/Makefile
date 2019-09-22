@@ -8,3 +8,9 @@ CFLAGS = -std=gnu99 -lpthread -lm -Wall -g
 
 summation: summation.c
 	$(CC) $(CFLAGS) summation.c -o summation
+
+summation3: summation3.c
+	$(CC) $(CFLAGS) summation3.c -o summation3
+
+mytime: mytime.c
+	$(CC) $(CFLAGS) mytime.c -o mytime
