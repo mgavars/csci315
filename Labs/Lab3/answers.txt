@@ -36,6 +36,6 @@ Problem 2
 
 Problem 4:
 
-1. It does not look like we can guarantee that the date printed is when the thread terminates, or else the dates would print after the print of how many microseconds each thread takes. It seems that the dates are printing when the threads are joining.
+1. It does not look like we can guarantee that the date printed is when the thread terminates, and this is because ctime() cannot guarantee that it will print out at termination.
 
-2. I believe the problem is that they print when the threads are joining, not when they are terminating. This could possibly be avoided by joining the threads in the same for loop in which they are created. 
+2. The problem with ctime is that it is not thread safe. The time it takes to complete one calculation in one thread will be longer than it takes for other threads to complete, so the printf will be delayed, in a sense. So the correct way to do it would be to use ctime_r() because that allows it to use a buffer to wait until it is completed. 

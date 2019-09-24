@@ -42,6 +42,8 @@ void *SumExp(void *args_ptr) {
 	struct timeval tvThreadAfter; 
 	struct timezone tz;
 	int threadCompletionTime;
+	//char buf[25];
+	//const time_t tCT;
 
 	gettimeofday(&tvThreadBefore, &tz);
 
@@ -79,6 +81,7 @@ void *SumExp(void *args_ptr) {
 	threadCompletionTime = tvThreadAfter.tv_usec - tvThreadBefore.tv_usec;
 
 	printf("Thread %d took %d microseconds\n", myargs_ptr->tid, threadCompletionTime);
+
 	printf("%s\n", ctime(&tvThreadAfter));
 
 	pthread_exit((void*) args_ptr);
