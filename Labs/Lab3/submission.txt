@@ -1,0 +1,12 @@
+Mitch Gavars
+CSCI 315 Lab3 - submission.txt
+Professor Marchiori
+September 23, 2019
+
+Problem 1: Problem 1 works as specified
+
+Problem 2: This was only answering questions in answers.txt
+
+Problem 3: Problem 3 works as specified
+
+Problem 4: I believe I implemented the ctime() the way it was asked to in the description so it should be working as specified.
