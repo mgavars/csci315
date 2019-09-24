@@ -1,0 +1,23 @@
+Mitch Gavars
+CSCI 315 Prelab 4 - prelab.txt
+Professor Marchiori
+9/23/19
+
+Problem 1: 
+
+socket, pipe, and open all enable communication to begin. open is more of just opening a file up to be read from or written to whereas socket and pipe set up a communication channel. The only difference between socket and pipe is that pipes are unidirectional and work on the same host & sockets can send between different hosts.
+
+
+Problem 2: 
+
+1. The one program is able to address the other for communication by sending out a listen(2) call to listen for any possible incoming connection requests.
+
+2. The purpose of the bind(2) call is to assign a name to a socket
+
+3. The purpose of the connect(2) call is to connect the socket referred to by the file descriptor to an address.
+
+4. The purpose of the listen(2) call is to mark the socket as open to receive incoming connections
+
+5. The purpose of the accept(2) call is to accept the connection from the listening socket.
+
+6. There are two functions that will help us send and receieve messages in the upcoming lab. We will use the send(2) call, which is only different from write(2) because it uses flags, and the recv(2) call. These two calls are used to send and receive messages from the sockets and we will implement those correctly into the client and server code. 
