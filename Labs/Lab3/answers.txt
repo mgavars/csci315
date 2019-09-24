@@ -32,3 +32,10 @@ Problem 2
 5. If one of the child threads is exited halfway through its computation, then the thread will not show up as 'done' in the terminal and the final computations will not be completed because it will be missing one of the child thread's computations. It does not even begin to join the previous threads before the one that exited.
 
 6. If one of the child processes calls execl on "/bin/ls" in its computation, then the thread once again does not complete. The thread will start, then make an exec call and not finish its process. The only difference between the results of this and exit(3) is that when execl(3)is called during a child thread, once all threads are completed, the child threads up to the one that called it join.
+
+
+Problem 4:
+
+1. It does not look like we can guarantee that the date printed is when the thread terminates, or else the dates would print after the print of how many microseconds each thread takes. It seems that the dates are printing when the threads are joining.
+
+2. I believe the problem is that they print when the threads are joining, not when they are terminating. This could possibly be avoided by joining the threads in the same for loop in which they are created. 

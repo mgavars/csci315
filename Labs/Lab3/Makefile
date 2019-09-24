@@ -14,3 +14,6 @@ summation3: summation3.c
 
 mytime: mytime.c
 	$(CC) $(CFLAGS) mytime.c -o mytime
+
+summation4: summation4.c
+	$(CC) $(CFLAGS) summation4.c -o summation4
