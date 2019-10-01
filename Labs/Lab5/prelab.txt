@@ -1,0 +1,23 @@
+Mitch Gavars
+CSCI 315 Prelab 5 - prelab.txt 
+Alan Marchiori
+9/30/19
+
+Problem 2:
+
+1. A mutex is a locking mechanism that only allows one thread to aquire it at a time to enter the critical section. Also only releases the mutex once that thread exits the critical section. A semaphore is a signalling mechanism that relies on wait and post to block and wakeup other threads/processes once they are ready to be completed. 
+
+
+2. 
+
+   pthread_mutex_init - initializes the referenced mutex with specified attributes. If none are specified then defaults are used. Once initialized, the state of the mutex sets as unlocked.
+
+   pthread_mutex_lock - locks an object if it was previously unlocked. If currently locked, then block() until ready.
+
+   pthread_mutex_unlock - releases the object referenced by mutex. If threads are blocked on the lock, then the mutex check the scheduling.
+
+   sem_init - initializes an unnamed semaphore at the address pointed to by the parameter sem_t *sem
+
+   sem_wait - sem_wait calls to see if there are any available resources. If there are not any resources, then the value returned is < 0.
+
+   sem_post - unlocks a semaphore. Once unlocked, if the semaphore's value is greater than 0, then it waked up another process to gain access and lock the semaphore.
