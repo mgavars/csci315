@@ -12,3 +12,6 @@ echoreq: echoreq.c
 
 echod: echod.c
 	$(CC) $(CFLAGS) echod.c -o echod
+
+echoreq2: echoreq2.c
+	$(CC) $(CFLAGS) echoreq2.c -o echoreq2
