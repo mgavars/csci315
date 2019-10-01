@@ -1,0 +1,5 @@
+Problem 1: I believe all of my wrappers work properly.
+
+Problem 2: I was able to send the message but the server does not clean up the string.
+
+Problem 4: It was compiling for me but not working properly.
