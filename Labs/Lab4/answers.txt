@@ -1,0 +1,16 @@
+Mitch Gavars
+Professor Marchiori
+CSCI 315 Lab4 - answers.txt
+09/24/2019
+
+Problem 3:
+
+1. The call to socket() creates an endpoint for communication and returns a file descriptor. Socket() will be used to check if two endpoints can be connected. If the connection fails, -1 will be returned and no connection will be If the socket passes, the two endpoints will connect and data can begin to be transferred.
+
+2. The socket functionality is provided by the kernel and uses the given formats. There is a kernel user interface device as well as an interface to kernel crypto API and a KCM interface. When using sockets, there is no need to implement an external library. The kernel allows processes to communicate with each other. They provide an interface that gives programs the ability to use IPC to send information back and forth between servers. All of these things provided by the kernel are what sockets need to operate in programs.
+
+3. Sockets are bidirectional whereas pipes are unidirectional. Sockets allow processes to send information in both directions whereas in pipes, information between two processes can only be sent in one direction. So I would use pipes or sockets accordingly based on what sort of process I am running.
+
+4. Gethostbyname() returns a structure of type hostent for the given host name. By calling gethostbyname(), we are able to convert the host name to an IP address that can later be used to check if it is an invalid host and if not, it will be copied to a structure that holds IP addresses.
+
+5. Getaddrinfo(3) is the most up-to-date function for this task. This function identifies an Internet host and a service. It returns one or more addrinfo structures, each of which contains an Internet address. This address can later be used when using the function bind() or connect(). Getaddrinfo combines the functionalities of gethostbyname and getservbyname. Getaddrinfo is able to eliminate IPv4 and IPv6 dependencies. With gethostbyname, when an IPv4 address is used, no lookup is performed; IPv6 is not supported with this function.
