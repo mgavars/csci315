@@ -6,6 +6,9 @@
  */
 #include "circular-list.h"
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 int print_list(struct circular_list *l) {
 	int start = l->start, end = l->end;
