@@ -1,0 +1,25 @@
+------------------------------------------------------------
+Lab 2 -- Feedback
+------------------------------------------------------------
+
+Problem 1 - pipes.c: 25/30
+1) Using the Fork wrapper and writing the three additional ones: 5/10
+2) Implementing the correct functionality for sending and receiving messages byte-by-byte over the pipe: 20/20
+Comment: Wrappers implemented but not used
+
+Problem 2 - upper.c: 17/20
+1) Using the wrappers defined previously: 2/5
+2) Parent sends and receives messages correctly over the pipe: 5/5
+3) Child does the case conversion and receives and sends messages correctly over the pipe: 10/10
+Comments: Wrappers used but commented out
+
+Problem 3 - tokens.c: 0/20
+1) Using the wrappers defined previously: 0/5
+2) Parent sends and receives messages correctly over the pipe: 0/5
+3) Child eliminates the repetitions of blank spaces and receives and sends messages correctly over the pipe: 0/10
+Comments: tokens.c not submitted. submission files mentions
+	  not sure how to approach, may complete later
+
+------------------------------------------------------------
+TOTAL 42 / 70.0
+------------------------------------------------------------
