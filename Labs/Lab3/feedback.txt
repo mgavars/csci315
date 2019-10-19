@@ -1,0 +1,29 @@
+------------------------------------------------------------
+Lab 3 -- Feedback
+------------------------------------------------------------
+
+Problem 1 - answers.txt: 15/15
+1) undefined symbols are 'pow', 'pthread_create', and 'pthread_join': 5/5
+2) linker flag to use the math library (eg: -lm): 5/5
+3) remaining undefined symbols are 'pthread_create' and 'pthread_join': 5/5
+
+Problem 2 - answers.txt: 20/20
+1) passing arguments to threads by reference (pointer): 3/3
+2) malloc allocates certain bytes, calloc can allocate multiples of size of struct: 3/3
+3) thread in detached states will be destroyed and its resources will be released immediately after it terminates, so no: 3/3
+4) main thread waits and joins each thread, and adds up the result attribute of the returned struct from each thread: 3/3
+5) calling exit in one thread would terminate the whole program: 4/4
+6) calling execl in one thread would prints all files in the directory, then stops the program: 4/4
+
+Problem 3 - summation3.c: 15/15
+1) returns time for execution of summation (gettimeofday): 10/10
+2) correct subtraction of time values: 5/5
+
+Problem 4 - summation4.c, answers.txt: 20/20
+1) each thread computes it run time and prints end time with ctime: 10/10
+2) the end time printed is not reliable (answers.txt): 5/5
+3) c_time uses static buffer, can be avoided by using ctime_r: 5/5
+
+------------------------------------------------------------
+TOTAL 70 / 70.0
+------------------------------------------------------------
