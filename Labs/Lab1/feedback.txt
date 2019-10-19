@@ -1,0 +1,50 @@
+------------------------------------------------------------
+Lab 1 -- Feedback
+------------------------------------------------------------
+
+Prelab 28/30
+
+Problem 1 - cmds.c: 10/10
+	a) Check 4 parameters are given: 3/3
+	b) Assign parameters to variables: 4/4
+	c) Print values of variables to terminal: 3/3
+
+Problem 2 - cmdreverse.c: 8/10
+	a) Check 1 parameter is given: 3/3
+	b) Reverse given string: 2/4
+	c) Print reversed string to terminal: 3/3
+Comments: Reverse half of the string, for test input "hello" printed heleh
+
+Problem 3 - myprog.c: 10/10
+	a) Parent process works correctly: 5/5
+	b) Children processes work correctly: 5/5
+
+Problem 0: 5/5
+	Make works correctly on cmds.c, cmdreverse.c and myprog.c: 5/5
+
+Problem 1: 20/20
+	a) Both parent and child prints pid (fork.c): 5/5
+	b) See answer.txt, should be 2 instances: 5/5
+	c) Parent terminates after child (fork-wait.c): 5/5; 
+	   child prints getpid() and getppid(): 5/5
+Comments: fork.c not included in submitted files, but since
+	  fork-wait.c is copied from fork.c, graded 1.1 based on that
+
+Problem 2: 25/25
+	a) See answer.txt, should be i, x in data, pid, j, y on stack: 4/4
+	b) See answer.txt, should be both are copied over, parent and child have separate segments: 5/5
+	c) fork-file.c works as expected: 6/6
+	d) See answer.txt, when one process closes the file, the other can still read: 3/3;
+	   child and parent read from same fd: 3/3
+	e) Wrapper Fork function created correctly: 4/4
+		
+Problem 3: 8/20
+	a) catcount.c works correctly: 4/10
+	b) print_environment works correctly: 4/10
+Comments: 3.2 print_environment does print each character line by line,
+	  however it is not the entire environment.
+	  3.1 The cat, along with wc is not executed
+------------------------------------------------------------
+TOTAL 86 / 100.0
+------------------------------------------------------------
+							
