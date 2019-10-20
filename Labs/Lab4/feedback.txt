@@ -1,0 +1,34 @@
+------------------------------------------------------------
+Lab 4 -- Feedback
+------------------------------------------------------------
+
+Problem 1 - wrappers.h, wrappers.c: 10/10
+1) correct wrappers for connect, bind, listen, accept: 6/6
+2) wrappers for old functions: 4/4
+
+Problem 2 - echoreq.c, echod.c: 20/25
+1) using system call wrappers: 5/5
+2) correct communication between echod and echoreq: 15/15
+3) correct code to clean up blank spaces: 0/5
+Comments: Successfully communications between echod and echoreq
+	  however per submission file the spaces are not cleaned
+
+Problem 3 - answers.txt: 18/20
+1) interprocess communication between two processes in two separate programs: 2/4
+2) socket(2) is a syscall, thus provided by the kernel; reasonable analysis: 4/4
+3) pipe vs socket, provide good reasoning: 4/4
+4) return host given host name, API is struct hostent *gethostbyname(const char *name): 4/4
+5) getaddrinfo(3), handles both IPv4 and IPv6: 4/4
+Comments: 3.1 mentions creation of an endpoint for communication, however no mention of 
+	  it being between two separate processes.
+	  
+
+Problem 4 - echoreq2.c: 10/15
+1) correct use of getaddrinfo(3): 10/10
+2) correct behavior of echoreq2: 0/5
+Comments: getaddrinfo is being utilized correctly upon inspection,
+	  however the expected behavior of echoreq2 is wrong. It 
+	  fails to connect when testing with linuxremote2.bucknell.edu
+------------------------------------------------------------
+TOTAL 58 / 70.0
+------------------------------------------------------------
