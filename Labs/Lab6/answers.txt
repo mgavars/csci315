@@ -1,0 +1,21 @@
+Mitch Gavars
+CSCI 315
+Alan Marchiori
+Lab 6 - answers.txt
+
+Problem 1: 
+1.1	After running the code, it hits a point where it no longer outputs anything. Most philosophers are hungry when that happens so we can assume it is deadlock.
+
+1.2
+	1. Mutual exclusion - "at least one resource must be held in a non-shareable mode." Our dining philosophers code employs mutual exclusion in the form of mutex locks placed upon each chopstick adjacent to the hungry philosopher. Thus, this condition IS met by our code.
+
+	2. Hold and wait - "A process is currently holding at least one resource and requesting additional resources which are held by other processes." Our philosophers request one chopstick, then request another. Once the first request is granted, the philospher does not release the chopstick until obtaining the second one.
+
+	3. Non-preemptable - "A resource can be released only voluntarily." Because our critical section is within the two locks, the chopstick resources are not able to be taken by another philosopher, introducing the non-premption criteria.
+
+	4. Circular wait - "Each process must be waiting for a resource which is being held by another process, which in turn is waiting for the first process to release the resource." Again, we see how our dining philosopher code can possibly introduce a circular wait if the order of philosphers requesting chopsticks is sequential, such that each philosopher is holding one chopstick and requesting the chopstick held by his/her neighbor.
+
+Thus, we see that, because all four conditions for deadlock are met, deadlock can possibly occur if our program encounters a sequence of requests such that a circular wait exists.
+
+
+
