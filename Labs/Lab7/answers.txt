@@ -1,0 +1,50 @@
+Mitch Gavars
+CSCI315 - Prelab 7
+Alan Marchiori
+answers.txt
+
+    1. Reflect on how processes will cause insertions and removals in the doubly-linked lists that keep track of the memory that is allocated or free. Discuss whether doubly-linked lists are suitable for use in a custom memory allocator. 
+
+        Processes will only have to keep track of the three memory portions of each node in a doubly linked list: the data value, the pointer to the next node, and the pointer to the previous node. Because we will only need to allocate and free a large amount of memory once in each process (at creation and termination), then doubly linked lists are suitable for use in a custom memory allocator because it can be optimized for common request sizes.
+
+
+    2. Propose one or more data structures that might work as well or possibly better than doubly-linked lists for keeping track of allocated and free memory. 
+
+        A circular linked list would possibly work better because there is less data to allocate and free; all there is in a circular linked list in the data value and the pointer to the next node.
+
+
+    3. Define the term external fragmentation and describe a scenario where it occurs. 
+
+        External fragmentation is the various free spaces holes that are generated in either memory or disk space. This occurs when processes are dynamically allocating memory.
+
+
+    4. Define the term internal fragmentation and describe a scenario where it occurs. 
+
+        Internal fragmentation is the wasted space with each allocated block. This can occur when fixed size memory blocks are allocated to the process without taking into account the size of the process.
+
+
+    5. Describe the first-fit allocation policy. Give one advantage and one disadvantage of its use. 
+
+        Begins at the start of primary memory and allocates memory from the first hole it encounters.
+	
+	Advantage: it is a fast search as it searches just enough to assign a process
+	
+	Disadvantage: may have problems not allowing processes to allocate even if it were possible with the space provided.
+
+
+    6. Describe the best-fit allocation policy. Give one advantage and one disadvantage of its use. 
+
+        Places a process in the smallest block of unallocated memory in which it will fit
+
+	Advantage: Minimizes wastage space in memory
+
+	Disadvantage: Takes a lot of time to search for a block of a correct size.
+
+
+    7. Describe the worst-fit allocation policy. Give one advantage and one disadvantage of its use. 
+
+        Places a process in the largest block of unallocated memory available
+
+	Advantage: It is quick - once it finds any unallocated memory to place a process, it puts it there
+	
+	Disadvantage: If a large process comes at a later stage, memory may not have space to allocate it
