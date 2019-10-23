@@ -22,3 +22,8 @@ Thus, we see that, because all four conditions for deadlock are met, deadlock ca
 Problem 2:
 
 The situation that led to deadlock was if the napping call was long enough in between picking up one chopstick and the other one (that one philosopher needs to eat), then enough time would pass where each philosopher would only be able to pick up one of the ones it needed and then the program would fall into deadlock.
+
+
+Problem 3:
+
+These solutions do not eliminate all the potential causes of deadlock. They only eliminate the circular wait problem. Mutual exclusivity, hold & wait, and non preemption are all still applicable in these solutions so we only eliminated one condition for deadlock.
