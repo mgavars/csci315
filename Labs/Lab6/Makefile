@@ -12,3 +12,6 @@ dp: dp.c
 problem1: problem1.c
 	$(CC) $(CFLAGS) problem1.c -o problem1
 
+problem2: problem2.c
+	$(CC) $(CFLAGS) problem2.c -o problem2
+
