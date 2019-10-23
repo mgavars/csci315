@@ -1,0 +1,16 @@
+Mitch Gavars
+CSCI 315
+Alan Marchiori 
+Lab 6 - submission.txt
+
+Problem 1:
+
+	Works as specified.
+
+Problem 2:
+
+	Works as specified.
+
+Problem 3:
+
+	Works as specified.
