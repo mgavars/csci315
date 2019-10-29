@@ -1,0 +1,14 @@
+Mitch Gavars
+CSCI 315
+Alan Marchiori
+Lab 7 - designAPI.txt
+
+
+
+I have used an enum so the user can enter a key that corresponds to the specific allocator they would like to use.
+
+The bestFit allocator is used to insert a process into the smallest chunk of memory that can fit the size of the process. This memory has not yet been allocated. This allocator runs through all of the memory to pick out the correct memory space.
+
+The firstFit allocator is used to insert a process into the first unallocated space of memory that can fit the size of the process. Once the allocator reaches a an appropriate block, the process will be allocated to that place in memory.
+
+The worstFit allocator is used to insert a process into the largest unallocated space of memory. This can cause problems later if a process comes along that is larger than the previous ones you have entered, and there is no unallocated space in memory to fit this large process. 
