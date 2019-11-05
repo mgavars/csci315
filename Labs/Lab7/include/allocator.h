@@ -39,4 +39,6 @@ Equivalent to free. This function will use ptr to find the corresponding node in
  */
 int deallocate(void *ptr);
 
+int printList(struct dlist *l);
+
 #endif /* _ALLOC_H_ */

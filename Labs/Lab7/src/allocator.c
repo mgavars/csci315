@@ -15,130 +15,166 @@
 int allocator_init(size_t size) {
   free_list = dlist_create();
   allocated_list = dlist_create();
+
+  void *initBlock = malloc(size);
  
-  if (malloc(size) == NULL){
+  if (initBlock == NULL){
     return -1;
   }
 
-  void *memory = (void *)size;
-
-  struct dnode *init = dnode_create();
-  dnode_setdata(init, memory);
-
-  dlist_add_front(free_list, init);
+  dlist_add_front(free_list, initBlock, size);
 
   return 0;
 }
 
 void *firstFitAllocate(size_t size){
   struct dnode *temp = free_list->front;
-  //struct dnode *allocate = dnode_create();
-  void *memory = (void *)size;
-
-  if (temp->next == NULL) {
-    if (size <= (size_t)temp->data){
-      dlist_add_front(allocated_list, memory);
-    }  
-  }
+  void *insert;
+  int nodeSize;
   
-  else {
-    while(temp->next != NULL) { 
-      if (size <= (size_t)temp->data){
-	dlist_add_front(allocated_list, memory);
-	break;
-      }
-   
-      temp = temp->next;
+ 
+  while(temp != NULL) { 
+    if ((int)size == temp->size){
+      insert = temp->data;
+      dlist_add_back(allocated_list, insert, size);
+      dlist_find_remove(free_list, insert, &nodeSize);   
+ 
+      break;
     }
+    else if ((int)size < temp->size) {
+      temp->size -= (int)size;
+      insert = temp->data;
+
+      dlist_add_back(free_list, temp->data + size, temp->size);
+
+      dlist_find_remove(free_list, insert, &nodeSize);
+
+      dlist_add_back(allocated_list, insert, size);
+      
+
+      break;
+    }
+    temp = temp->next;
   }
-  return 0;
+  return insert;
 }
 
 void *bestFitAllocate(size_t size) {
+  
   struct dnode *temp = free_list->front;
-  struct dnode *currentSmallest = free_list->front;
-  void *memory;
+  struct dnode *currentSmallest = temp;
+  int nodeSize;
+  void *insert;
 
-  if (temp->next == NULL) {
-    if (size <= (size_t)temp->data){
-      memory = (void *)size;
-    }  
-  }
+  // check if free list is all allocated
 
-  else {
-    while(true) {
-      if (size <= (size_t)temp->data) {
-	if (temp->data < currentSmallest->data) {
-	  memory = (void *)temp->data;
-	  dnode_setdata(currentSmallest, memory);
-	}
+  while(temp != NULL) {
+    
+    if (size <= (size_t)temp->size) {
+
+      if (temp->size < currentSmallest->size) {
+
+	currentSmallest = temp;
+
       }
-      if (temp->next == NULL) {
-	break;
-      }
-      temp = temp->next;
     }
+    temp = temp->next;
   }
-  dlist_add_back(allocated_list, memory);
-  dlist_find_remove(free_list, memory);
-  return 0;
+
+  insert = currentSmallest->data;
+  
+  currentSmallest->size -= (int)size;
+
+  dlist_add_back(free_list, currentSmallest->data + size, currentSmallest->size);
+
+  dlist_find_remove(free_list, insert, &nodeSize);
+
+  dlist_add_back(allocated_list, insert, size);
+  
+  return insert;
 }
 
 void *worstFitAllocate(size_t size) {
+  
   struct dnode *temp = free_list->front;
   struct dnode *currentLargest = free_list->front;
-  void *memory = (void *) size;
+  int nodeSize;
+  void *insert;
   
-  if (temp->next == NULL) {
-    if (size <= (size_t)temp->data){
-      memory = (void *)size;
-    }  
+
+
+  while(temp != NULL) {
+    if (size <= (size_t)temp->data) {
+
+      if (temp->size > currentLargest->size) {
+
+	currentLargest = temp;
+
+      }
+    }
+   
+    temp = temp->next;
   }
 
-  else {
-    while(true) {
-      if (size <= (size_t)temp->data) {
-	if (temp->data > currentLargest->data) {
-	  memory = (void *)temp->data;
-	  dnode_setdata(currentLargest, memory);
-	}
-      }
-      if (temp->next == NULL) {
-	break;
-      }
-      temp = temp->next;
-    }
-  }
-  dlist_add_back(allocated_list, memory);
-  dlist_find_remove(free_list, memory);
-  return 0;
+  insert = currentLargest->data;
+  
+  currentLargest->size -= (int)size;
+
+  dlist_add_back(free_list, currentLargest->data + size, currentLargest->size);
+
+  dlist_find_remove(free_list, insert, &nodeSize);
+
+  dlist_add_back(allocated_list, insert, size);
+  
+  
+  return insert;
 }
 
 
 void *allocate(size_t size, enum fitType fit) {
+  void *block = NULL;
+
   if (fit == ALLOCFITFIRST){
-    firstFitAllocate(size);
+    block = firstFitAllocate(size);
   }
 
   if (fit == ALLOCFITBEST){
-    bestFitAllocate(size);
+    block = bestFitAllocate(size);
   }
 
   if (fit == ALLOCFITWORST){
-    worstFitAllocate(size);
+    block = worstFitAllocate(size);
   }
-  return 0;
+
+  return block;
 }
   
 
 int deallocate(void *ptr) { 
-  void *removedNode = dlist_find_remove(allocated_list, ptr);
+  int size;
+  void *removedNode = dlist_find_remove(allocated_list, ptr, &size);
   if (removedNode != NULL) {
-    dlist_add_back(free_list,removedNode);    
+    dlist_add_back(free_list, removedNode, size);
+    
     return 0;
   }
   else {
     return -1;
   }
 
+}
+
+int printList(struct dlist *l) {
+  struct dnode *n = l->front;
+
+  printf("[ ");
+
+  while (n != NULL){
+    printf("[data: %p, size = %d] ", n->data, n->size);
+
+    n = n->next;
+  }
+
+  printf(" ]");
+  return 0;
 }
