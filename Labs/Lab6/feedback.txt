@@ -1,0 +1,28 @@
+------------------------------------------------------------
+Lab 6 -- Feedback
+------------------------------------------------------------
+
+Prelab: 30/30
+
+  A) correct implementation of Philosopher: 15/15
+  B) correct implementation of Main: 15/15
+
+Problem 1 - problem1.c, problem1.out, answers.txt: 30/30
+  1) problem1.c no two consecutive philosophers are eating at the same time: 20/20
+  2) problem1.out submitted: 4/4
+  3) describe problems of the program in answers.txt (deadlock): 3/3
+  4) cause of deadlock: 3/3
+
+Problem 2 - problem2.c, problem2.out, answers.txt: 20/20
+  1) problem2.c causes deadlock to happen: 12/12
+  2) problem2.out submitted: 4/4
+  3) deadlock happens because of circular wait: 4/4
+
+Problem 3 - problem3-1.c, problem3-2.c, answers.txt: 20/20
+  1) problem3-1.c - odd number pick up right first, otherwise left first: 8/8
+  2) problem3-2.c - pick up lower numbered first: 8/8
+  3) answer and explain if this solves deadlock: 4/4
+
+------------------------------------------------------------
+TOTAL 100 / 100.0
+------------------------------------------------------------
