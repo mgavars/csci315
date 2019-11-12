@@ -1,0 +1,61 @@
+Mitch Gavars
+CSCI315 - Lab 8
+Alan Marchiori
+answers.txt
+(1.1)
+
+The possible fragmentation possible with a custom memory allocator like ours is external fragmentation. Because we are only allocating specific sizes in memory (which would only create leftover from spliced memory chunks), and not working with a system that uses pages or blocks of specific sizes (that would cause internal fragmentation). 
+
+(1.2)
+We could measure runtime for each of the allocators. The runtime could provide us with a sense of which allocators are more efficent than others and which ones to use in which situations. First fit has a best case runtime of O(1) because it runs through the memory once and places the process in the first empty space. First fit has a worst case runtime of O(n) if the only empty space that fits the process is at the last space in memory. The Worst fit and best fit have a runtime of O(n) because the system needs to run through every unallocated block of memory and record which space is the largest / smallest. 
+
+We could also use the time functions to record the exact time each process takes with each set of inputs. We would start the time at the beginning of the allocation and end it once all of the process have been allocated or attempted to be allocated. We could then compare the time taken for each of the different memory allocators to detremine which of our allocators is most efficient.
+
+(1.3)
+double average_frag(){
+      struct dnode *temp = first node in free_list
+      int leftoverSpace;  // keep track of total leftover memory space
+
+      while (temp in free_list) {
+          leftoverSpace += size of current node
+      }
+     
+      return leftoverSpace / # correct allocations
+}
+
+
+
+(2.1) Yes, it is correct. You just need to add lines of code that specify which type of allocator you are using.
+
+//initialize your custom memory allocator to work with a pool of 10240 bytes (10K)
+
+srandom(seed); // initialize PRNG, or Pseudo-Random Number Generator
+
+int r=0;
+
+void *p = NULL;
+
+if (algorithm == 0,1,2)      // check to see which allocator the user wants to use
+        set to the correct fitting algorithm accordingly     	  // 0 is for first-fit, 1 is for best-fit, and 2 is for worst-fit
+     
+
+else     // if user does not enter 0,1, or 2, they have not chosen an available allocator
+   exit; // the program should be exited
+
+while (r < requests) {
+
+  s = a random number between 100 and 1000;
+
+  
+     
+
+  p = allocate(algorithm, s)
+  // this will require you to change your allocate function
+  // so that it accepts the algorithm parameter to select an
+  // allocation policy
+
+  deallocate(p);
+}
+
+
+(3.2) Best-fit works the best for my simulation of allocation/deallocation activity. Best-fit needed the least amount of requests (only 37) to reach the point estimate close to .95
