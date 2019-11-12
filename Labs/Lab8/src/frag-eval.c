@@ -16,12 +16,12 @@ int main(int argc, char *argv[]){
 
   int runs = 0;
   double avgFrag = 0.0;
-  double exFrag = 0.0;
+  //double exFrag = 0.0;
   int seed = atoi(argv[2]);
 
   totalExFrag = 0;
 
-  allocator_init(size);
+  
   
   //srand(atoi(argv[2])); 
 
@@ -47,11 +47,13 @@ int main(int argc, char *argv[]){
   }
  
   while(runs < RUNSIZE){
+    allocator_init(size);
+
     srand(seed + runs);
  
     while(r < atoi(argv[3])) {
       s = 100 + rand()%900;
-      printf("%d\n", s);
+      //printf("%d\n", s);
       if (s < 1000 && s > 100){
 	p = allocate(algorithm, (size_t)s );
 
@@ -61,25 +63,26 @@ int main(int argc, char *argv[]){
       }
     }
     
-    
+    /*
       printf("Free List: \n");
       printList(free_list);
       printf("\n\nAllocated List: \n");
       printList(allocated_list);
       printf("\n\n");
-    
+    */
 
   avgFrag += average_frag();
   
   runs += 1;
 
   r = 0;
+
   
   }
   
-  exFrag = avgFrag / totalExFrag ;
+  double totalFrag = avgFrag / RUNSIZE ;
 
-  printf("Total fragmentation for %d runs is= %lf\n", RUNSIZE,  exFrag); 
+  printf("Total fragmentation for %d runs is= %lf\n", RUNSIZE,  totalFrag); 
 
   return 0;
 }
