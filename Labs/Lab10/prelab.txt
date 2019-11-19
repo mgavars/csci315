@@ -1,0 +1,30 @@
+Mitch Gavars
+CSCI 315 Prelab 10 - prelab.txt
+Alan Marchiori
+11/19/19
+
+Problem 2:
+
+(2.1)
+	What I see when I output that seems to be the first 128 bytes in the file hexdump.c
+
+(2.2)
+	This seems to be the first 128 bytes of the executable of our fdump.c file we wrote.
+
+(2.3)
+	Because the bytes we read from the hexdump.c file are lines that were human produced and written so that is what will be outputted. The executable we read from, however, is written in such a manner that only the computer knows what to do with it.
+
+(2.4)
+	/usr/bin/file -> ELF 64-bit LSB executable.......
+	
+	~cs315/Labs/Lab10/work -> PDF document, version 1.3
+
+	~cs315/Labs/Lab10/beauty -> JPEG image data, ......
+
+	my hexdump.o -> ELF 64-bit LSB relocatable.....
+
+	hexdump.h -> C source, ASCII text
+
+	
+	It seems like file(1) is simply returning the file type of the input. It determines the file type based on filesystem tests which are based on calls to stat(2). 
+
