@@ -1,0 +1,14 @@
+Mitch Gavars
+CSCI 315 Lab 9
+Alan Marchiori
+11/18/19
+
+Problem 1 works as indicated.
+
+Problem 2 works as indicated. 
+
+Problem 3 works as indicated.
+
+Problem 4 works as indicated.
+
+Problem 5 works as indicated.
