@@ -40,6 +40,12 @@ read_dir: read_dir.o
 read_dir.o: read_dir.c
 	$(CC) -c $(CFLAGS) read_dir.c
 
+traverse: traverse.o
+	$(CC) -o traverse traverse.o
+
+traverse.o: traverse.c
+	$(CC) -c $(CFLAGS) traverse.c
+
 fdump: fdump.c hexdump.o
 	$(CC) $(CFLAGS) hexdump.o fdump.c -o fdump
 
