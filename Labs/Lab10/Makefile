@@ -52,5 +52,17 @@ fdump: fdump.c hexdump.o
 hexdump.o: hexdump.c
 	$(CC) -c $(CFLAGS) hexdump.c
 
+sender: sender.o 
+	$(CC) -o sender sender.o
+
+sender.o: sender.c
+	$(CC) -c $(CFLAGS) sender.c
+
+receiver: receiver.o 
+	$(CC) -o receiver receiver.o
+
+receiver.o: receiver.c
+	$(CC) -c $(CFLAGS) receiver.c
+
 clean:
 	/bin/rm -f *~ *.o core $(EXE)
