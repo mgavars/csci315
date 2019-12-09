@@ -1,0 +1,14 @@
+------------------------------------------------------------
+Lab 7 -- Feedback
+------------------------------------------------------------
+
+[12/12] The correct implementation of allocator_init.
+[12/12] A clear explanation of the design of your supporting functions for dealing with various policies for contiguous memory allocation (best-fit, first-fit, and worst-fit). Your document should describe the API of your functions and how they are used in your custom memory allocator.
+[12/12] The correct implementation of allocate.
+[7/7] Your correct modification to the doubly-linked list module given to you, which should support your deallocate implementation.
+[12/12] The correct implementation of deallocate.
+[15/15] The implementation of a test suite that can verify that all the functionality of your custom memory allocator works without bugs.
+
+------------------------------------------------------------
+TOTAL 70 / 70.0
+------------------------------------------------------------
