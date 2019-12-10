@@ -1,0 +1,28 @@
+------------------------------------------------------------
+Lab 8 -- Feedback
+------------------------------------------------------------
+
+Problem 1 - answers.txt, allocator.c, allocator.h: 30/30
+  1) types of fragmentation possible with your custom memory allocator: 8/8
+  2) two performance metrics (unrelated to fragmentation) for memory allocator: 8/8
+  3) algorithm description of average_frag(): 4/4
+  4) correct implementation of average_frag(): 10/10
+
+Problem 2 - frag-eval.c, answers.txt, Makefile: 17/30
+  1) not appropriate, provide appropriate pseudo-code: 3/8
+  2) main() correctly implemented and displays average_frag result: 9/17
+  3) rule for frag-eval in Makefile: 5/5
+Comments: The algorithm is not appropriate as it is deallocates immediately
+	  after allocating, which is not realistic.
+	  Does not compile due to missing dnode and dlist files, when examining
+	  code appears to have the right implementation, but cannot verify
+	  correctness by running.
+
+Problem 3 - exp-results.pdf, answers.txt: 22/40
+  1) exp-results.pdf looks reasonable: 12/30
+  2) reflect upon the results in answers.txt: 10/10
+Comments: exp-results.pdf only has around 3 entries, which look reasonable,
+	  however more are required.
+------------------------------------------------------------
+TOTAL 69 / 100.0
+------------------------------------------------------------
