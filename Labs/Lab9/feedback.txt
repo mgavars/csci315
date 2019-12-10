@@ -1,0 +1,19 @@
+------------------------------------------------------------
+Lab 9 -- Feedback
+------------------------------------------------------------
+
+Problem 1 - ishell.c works properly: 30/30
+
+Problem 2 - termination code displayed properly: 15/15
+
+Problem 3 - executes two commands separated by semicolon: 10/15
+Comment: the second command is not executed correctly
+
+Problem 4 - press enter twice performs 'ls': 12/15
+Comments: Works but following the second enter the prompt no longer appears
+
+Problem 5 - additional shell feature: 25/25
+
+------------------------------------------------------------
+TOTAL 92 / 100.0
+------------------------------------------------------------
