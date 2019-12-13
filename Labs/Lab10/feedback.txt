@@ -1,0 +1,25 @@
+------------------------------------------------------------
+Lab 10 -- Feedback
+------------------------------------------------------------
+
+Prelab: 30/30
+  1) fdump.c works correctly: 15/15
+  2) prelab.txt answers (4pts per question): 15/15
+
+Problem 1 - file_stat.c generates correct output: 18/20
+Comments: minor issues with file protection mode
+
+Problem 2 - traverse.c: 20/20
+  1) program works correctly without symbolic link: 10/10
+  2) program works correctly with symbolic link: 10/10
+Comment: incorrect stats
+
+Problem 3 - answers.txt (2pts per question): 0/8
+Comments: No answers.txt file  
+
+Problem 4 - sender and receiver works properly: 14/22
+Comment: does not produce the expected output, though right direction
+
+------------------------------------------------------------
+TOTAL 82 / 100.0
+------------------------------------------------------------
