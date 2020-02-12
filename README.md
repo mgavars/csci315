@@ -1,0 +1,1 @@
+# Lab folder for csci315 which covers a number of aspects of operating systems, such as process management, threads, concurrency, deadlocks, memory management, file systems, input/output systems, and security
